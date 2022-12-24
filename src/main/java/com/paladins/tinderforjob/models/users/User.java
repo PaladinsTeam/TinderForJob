@@ -2,26 +2,24 @@ package com.paladins.tinderforjob.models.users;
 
 import com.paladins.tinderforjob.models.Models;
 import com.paladins.tinderforjob.models.enumeration.UserStatus;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
+/**
+ * Общая сущность для кандидата и работодателя
+ */
+@Setter
+@Getter
 @MappedSuperclass
-//Обозначает класс, информация о сопоставлении которого применяется к сущностям, которые наследуются от него.
 public abstract class User implements Models {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Nullable
     @Enumerated(EnumType.STRING)
-    private UserStatus userStatus;
-
-    //region set-get
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-    //endregion
+    private final UserStatus userStatus = UserStatus.ACTIVE;
 }

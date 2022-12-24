@@ -4,16 +4,23 @@ import com.paladins.tinderforjob.models.Models;
 import com.paladins.tinderforjob.models.enumeration.JobTitle;
 import com.paladins.tinderforjob.models.enumeration.Skills;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * Общая сущность для резюме и вакансии, "анкета"
+ */
 @MappedSuperclass
 @NoArgsConstructor
 @Data
 public abstract class Questionnaire implements Models {
     @Id
+    @Setter
+    @Getter
     @GeneratedValue
     private Long id;
 

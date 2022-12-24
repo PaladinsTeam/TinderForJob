@@ -3,7 +3,9 @@ package com.paladins.tinderforjob.models.enumeration;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-//@Entity
+/**
+ * Установленный список именования вакансий
+ */
 public enum JobTitle {
     ANALYST, DEVELOPER, DEVOPS, PROJECT_MANAGER, PRODUCT_MANAGER, QA, DESIGNER;
 
